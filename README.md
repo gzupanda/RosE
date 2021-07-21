@@ -62,12 +62,6 @@ To run on GPU (approx 5x faster), simply add the following theano flag before th
 THEANO_FLAGS='device=gpu' python fb15k_1L.py
 ```
 
-## Export the produced embeddings
-
-Simply uncomment the last lines in `fb15k_run.py` and `wn18_run.py` (and the `import scipy.io` line (requires scipy module)), this will save the embeddings of the ComplEx model in the common matlab `.mat` format.
-If you want to save the embeddings of other models, just edit the embedding variable names corresponding to the desired model (see `models.py`).
-
-
 ## Run on your own data
 
 Create a subfolder in the `datasets` folder, and put your data in three files `train.txt`, `valid.txt` and `test.txt`. Each line is a triple, in the format: 
