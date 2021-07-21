@@ -20,14 +20,39 @@ The code is compatible with Python 2 and 3.
 
 ## Run the experiments
 
-And run the corresponding python scripts, for Freebase (FB15K):
+We provide two versions of them, they are $w_1$TransE and  $w_w$TransE, respectively.
+### The first group of datasets.
+For the dataset Kinships:
 ```
-python fb15k_run.py
+python kinships_1L.py
+python kinships_2L.py
 ```
-
-And for Wordnet (WN18):
+And for the dataset UMLS:
 ```
-python wn18_run.py
+python umls_1L.py
+python umls_2L.py
+```
+### The second group of datasets.
+For the dataset Freebase (FB15k):
+```
+python fb15k_1L.py
+python fb15k_2L.py
+```
+And for the dataset Wordnet (WN18):
+```
+python wn18_1L.py
+python wn18_2L.py
+```
+### The third group of datasets.
+For the dataset Freebase (FB15k237):
+```
+python fb15k237_1L.py
+python fb15k237_2L.py
+```
+And for the dataset Wordnet (WN18RR):
+```
+python wn18rr_1L.py
+python wn18rr_2L.py
 ```
 
 By default, it runs the ComplEx (Complex Embeddings) model, edit the files and uncomment the corresponding lines to run DistMult, TransE, RESCAL or CP models. The given hyper-parameters for each model are the best validated ones by the grid-search described in the paper.
@@ -95,7 +120,6 @@ The regularization defined here is the L2 regularization over the corresponding 
 
 That's all you need to implement your own tensor factorization model! All gradient computation is handled by Theano auto-differentiation, and all the training functions by the [downhill](https://github.com/lmjohns3/downhill) module and the `Abstract_Model` class.
 
-$f_{r}$
 ## License
 
 This software comes under a non-commercial use license, please see the LICENSE file.
