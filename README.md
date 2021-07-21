@@ -59,7 +59,7 @@ By default, it runs the ComplEx (Complex Embeddings) model, edit the files and u
 
 To run on GPU (approx 5x faster), simply add the following theano flag before the python call:
 ```
-THEANO_FLAGS='device=gpu' python fb15k_run.py
+THEANO_FLAGS='device=gpu' python fb15k_1L.py
 ```
 
 ## Export the produced embeddings
@@ -123,4 +123,3 @@ That's all you need to implement your own tensor factorization model! All gradie
 ## License
 
 This software comes under a non-commercial use license, please see the LICENSE file.
-``
