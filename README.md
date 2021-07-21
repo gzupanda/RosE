@@ -1,18 +1,12 @@
-# Complex Embeddings for Simple Link Prediction
+# wTransE: A Weighted Translation-based Model forKnowledge Graph Completion
 
 This repository contains the code of the main experiments presented in the papers:
-
-[Complex Embeddings for Simple Link Prediction](http://jmlr.org/proceedings/papers/v48/trouillon16.pdf),
-Théo Trouillon, Johannes Welbl, Sebastian Riedel, Éric Gaussier and Guillaume Bouchard, ICML 2016.
-
-[Knowledge Graph Completion via Complex Tensor Factorization](http://www.jmlr.org/papers/volume18/16-563/16-563.pdf),
-Théo Trouillon, Christopher R. Dance, Éric Gaussier, Johannes Welbl, Sebastian Riedel and Guillaume Bouchard, JMLR 2017.
 
 ## Install 
 
 First clone the repository:
 ```
-git clone https://github.com/ttrouill/complex.git
+git clone https://github.com/gzupanda/wTransE.git
 ```
 
 The code depends on [downhill](https://github.com/lmjohns3/downhill), a theano-based Stochastic Gradient Descent implementation.
@@ -25,12 +19,6 @@ pip install -r requirements.txt
 The code is compatible with Python 2 and 3.
 
 ## Run the experiments
-
-To run the experiments, unpack the datasets first:
-```
-unzip datasets/fb15k.zip -d datasets/
-unzip datasets/wn18.zip -d datasets/
-```
 
 And run the corresponding python scripts, for Freebase (FB15K):
 ```
@@ -107,32 +95,6 @@ The regularization defined here is the L2 regularization over the corresponding 
 
 That's all you need to implement your own tensor factorization model! All gradient computation is handled by Theano auto-differentiation, and all the training functions by the [downhill](https://github.com/lmjohns3/downhill) module and the `Abstract_Model` class.
 
-
-
-
-## Cite ComplEx
-
-If you use this package for published work, please cite either or both papers, here is the BibTeX:
-```
-@inproceedings{trouillon2016complex,
-	title = {{Complex embeddings for simple link prediction}},
-	author = {Trouillon, Th\'eo and Welbl, Johannes and Riedel, Sebastian and Gaussier, \'Eric and Bouchard, Guillaume},
-	booktitle = {International Conference on Machine Learning (ICML)},
-	volume={48},
-	pages={2071--2080},
-	year = {2016}
-}
-@article{trouillon2017knowledge,
-	title={Knowledge graph completion via complex tensor factorization},
-	author={Trouillon, Th{\'e}o and Dance, Christopher R and Gaussier, {\'E}ric and Welbl, Johannes and Riedel, Sebastian and Bouchard, Guillaume},
-	journal={Journal of Machine Learning Research (JMLR)},
-	volume={18},
-	number={130},
-	pages={1--38},
-	year={2017}
-}
-
-```
 $f_{r}$
 ## License
 
