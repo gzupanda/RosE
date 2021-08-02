@@ -25,7 +25,7 @@ if __name__ =="__main__":
 	#all_params = { "DistMult_Logistic_Model" : params } ; emb_size = 200; lmbda =0.003; params.learning_rate = 1.0
 	#all_params = { "CP_Logistic_Model" : params } ; emb_size = 100; lmbda =0.1; 
 	#all_params = { "Rescal_Logistic_Model" : params } ; emb_size = 50; lmbda =0.1
-	all_params = { "wTransE_1L_Model" : params } ; emb_size = 100; lmbda = 5 ;params.miuA = 1;params.miuB = 0.5;params.lambda_A =0.04;params.lambda_B=0.02
+	all_params = { "RosE_1L_Model" : params } ; emb_size = 100; lmbda = 5 ;params.miuA = 1;params.miuB = 0.5;params.lambda_A =0.04;params.lambda_B=0.02
 
 	tools.logger.info("Max iter: " + str(params.max_iter))
 	tools.logger.info("Generated negatives ratio: " + str(params.neg_ratio))

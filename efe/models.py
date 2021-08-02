@@ -367,13 +367,13 @@ class DistMult_Logistic_Model(DistMult_Model):
 
 
 
-class TransE_L2_Model(Abstract_Model):
+class RosE_L2_Model(Abstract_Model):
 	"""
 	TransE model with L2 loss, but with the max margin ranking loss (performs better than maximum likelihood, only for TransE interestingly).
 	"""
 
 	def __init__(self):
-		super(TransE_L2_Model, self).__init__()
+		super(RosE_L2_Model, self).__init__()
 		
 		self.name = self.__class__.__name__
 		
@@ -426,7 +426,7 @@ class TransE_L2_Model(Abstract_Model):
 		self.miuA = hparams.miuA
 		self.miuB = hparams.miuB
 
-		super(TransE_L2_Model,self).setup_params_for_train(train_triples, valid_triples, hparams, redefine_loss)
+		super(RosE_L2_Model,self).setup_params_for_train(train_triples, valid_triples, hparams, redefine_loss)
 
 
 
@@ -445,13 +445,13 @@ class TransE_L2_Model(Abstract_Model):
 
 
 
-class wTransE_2L_Model(TransE_L2_Model):
+class RosE_2L_Model(RosE_L2_Model):
 	"""
 	TransE model with L1 loss, but with the max margin ranking loss (performs better than maximum likelihood, only for TransE interestingly).
 	"""
 
 	def __init__(self):
-		super(wTransE_2L_Model, self).__init__()
+		super(RosE_2L_Model, self).__init__()
 
 		self.name = self.__class__.__name__
 		
@@ -460,7 +460,7 @@ class wTransE_2L_Model(TransE_L2_Model):
 	def setup_params_for_train(self, train_triples, valid_triples, hparams, redefine_loss = False):
 
 
-		super(wTransE_2L_Model,self).setup_params_for_train(train_triples, valid_triples, hparams, redefine_loss)
+		super(RosE_2L_Model,self).setup_params_for_train(train_triples, valid_triples, hparams, redefine_loss)
 
 	def define_loss(self):
 
@@ -481,13 +481,13 @@ class wTransE_2L_Model(TransE_L2_Model):
 		self.regul_func = self.lambda_A  * TT.sqr(self.w1[self.cols, :]).mean() \
 						+ self.lambda_B  * TT.sqr(self.w2[self.cols, :]).mean()
 
-class wTransE_1L_Model(Abstract_Model):
+class RosE_1L_Model(Abstract_Model):
 	"""
 	TransE model with L2 loss, but with the max margin ranking loss (performs better than maximum likelihood, only for TransE interestingly).
 	"""
 
 	def __init__(self):
-		super(wTransE_1L_Model, self).__init__()
+		super(RosE_1L_Model, self).__init__()
 
 		self.name = self.__class__.__name__
 
@@ -541,7 +541,7 @@ class wTransE_1L_Model(Abstract_Model):
 		self.lambda_A = hparams.lambda_A
 		self.lambda_B = hparams.lambda_B
 
-		super(wTransE_1L_Model, self).setup_params_for_train(train_triples, valid_triples, hparams, redefine_loss)
+		super(RosE_1L_Model, self).setup_params_for_train(train_triples, valid_triples, hparams, redefine_loss)
 
 	def define_loss(self):
 

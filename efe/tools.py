@@ -7,7 +7,7 @@ import colorsys
 cur_path = os.path.dirname(os.path.realpath( os.path.basename(__file__)))
 
 #Logging
-logger = logging.getLogger("wTransE")
+logger = logging.getLogger("RosE")
 logger.setLevel(logging.DEBUG)
 logger.propagate = False
 

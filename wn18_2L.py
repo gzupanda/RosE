@@ -15,7 +15,7 @@ if __name__ =="__main__":
 						learning_rate_policy = 'adagrad',
 						contiguous_sampling = False )
 
-	all_params = { "wTransE_2L_Model" : params } ; emb_size = 200; lmbda = 2; params.miuA = 0.5;params.miuB = 0.5;params.lambda_A = 1;params.lambda_B = 1
+	all_params = { "RosE_2L_Model" : params } ; emb_size = 200; lmbda = 2; params.miuA = 0.5;params.miuB = 0.5;params.lambda_A = 1;params.lambda_B = 1
 	tools.logger.info("Max iter: " + str(params.max_iter))
 	tools.logger.info("Generated negatives ratio: " + str(params.neg_ratio))
 	tools.logger.info("Batch size: " + str(params.batch_size))

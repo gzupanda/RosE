@@ -211,7 +211,7 @@ class Scorer(object):
 			ranks = np.empty( 2 * nb_test)
 			raw_ranks = np.empty(2 * nb_test)
 
-			if model_s.startswith("DistMult") or model_s.startswith("Complex") or model_s.startswith("CP") or model_s.startswith("wTransE") or model_s.startswith("Rescal"):
+			if model_s.startswith("DistMult") or model_s.startswith("Complex") or model_s.startswith("CP") or model_s.startswith("RosE") or model_s.startswith("Rescal"):
 				#Fast super-ugly filtered metrics computation for Complex, DistMult, RESCAL and TransE
 				logger.info("Fast MRs")
 
@@ -228,23 +228,23 @@ class Scorer(object):
 				def complex_eval_s(j,k):
 					return e1.dot(r1[j,:] * e1[k,:]) + e2.dot(r1[j,:] * e2[k,:]) + e1.dot(r2[j,:] * e2[k,:]) - e2.dot(r2[j,:] * e1[k,:])
 
-				def transe_2L_eval_o(i,j):
+				def rose_2L_eval_o(i,j):
 					abso1_2L = np.abs((e - e[i,:]) * w1[i,:] - r[j,:] * w2[j,:])
 					abso2_2L = 0.5 * np.abs(e[i,:] + r[j,:] - e)
 					abso_2L = 0.5 * (abso1_2L + abso2_2L)
 					return - np.sum(abso_2L,1)
-				def transe_2L_eval_s(j,k):
+				def rose_2L_eval_s(j,k):
 					abss1_2L = np.abs((e[k,:] - e)  * w1 - r[j,:] * w2[j,:])
 					abss2_2L = 0.5 * np.abs(e + r[j,:] - e[k,:])
 					abss_2L = 0.5 * (abss1_2L + abss2_2L)
 					return - np.sum(abss_2L,1)
 
-				def transe_1L_eval_o(i,j):
+				def rose_1L_eval_o(i,j):
 					abso1_1L = np.abs((e - e[i,:]) * w[j,:] - b[j,:])
 					abso2_1L = 0.5 * np.abs(e[i,:] + r[j,:] - e)
 					abso_1L = 0.5 * (abso1_1L + abso2_1L)
 					return - np.sum(abso_1L,1)
-				def transe_1L_eval_s(j,k):
+				def rose_1L_eval_s(j,k):
 					abss1_1L = np.abs((e[k,:] - e) * w[j,:] - b[j,:])
 					abss2_1L = 0.5 * np.abs(e + r[j,:] - e[k,:])
 					abss_1L = 0.5 * (abss1_1L + abss2_1L)
@@ -274,21 +274,21 @@ class Scorer(object):
 					eval_o = complex_eval_o
 					eval_s = complex_eval_s
 
-				elif model_s == "wTransE_1L_Model":
+				elif model_s == "RosE_1L_Model":
 					e = model.e.get_value(borrow=True)
 					w = model.w.get_value(borrow=True)
 					b = model.b.get_value(borrow=True)
 					r = model.r.get_value(borrow=True)
-					eval_o = transe_1L_eval_o
-					eval_s = transe_1L_eval_s
+					eval_o = rose_1L_eval_o
+					eval_s = rose_1L_eval_s
 
-				elif model_s == "wTransE_2L_Model":
+				elif model_s == "RosE_2L_Model":
 					e = model.e.get_value(borrow=True)
 					r = model.r.get_value(borrow=True)
 					w1 = model.w1.get_value(borrow=True)
 					w2 = model.w2.get_value(borrow=True)
-					eval_o = transe_2L_eval_o
-					eval_s = transe_2L_eval_s
+					eval_o = rose_2L_eval_o
+					eval_s = rose_2L_eval_s
 
 
 				elif model_s.startswith("Rescal"):

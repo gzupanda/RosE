@@ -15,7 +15,7 @@ if __name__ =="__main__":
 						valid_scores_every = 1000,
 						learning_rate_policy = 'adagrad',
 						contiguous_sampling = False )
-	all_params = { "wTransE_1L_Model" : params } ; emb_size = 300; lmbda = 2 ;params.miuA = 0.5;params.miuB = 0.5;params.lambda_A =0.04;params.lambda_B=0.02
+	all_params = { "RosE_1L_Model" : params } ; emb_size = 300; lmbda = 2 ;params.miuA = 0.5;params.miuB = 0.5;params.lambda_A =0.04;params.lambda_B=0.02
 
 
 
