@@ -20,7 +20,7 @@ The code is compatible with Python 2 and 3.
 
 ## Run the experiments
 
-We provide two versions of them, they are $w_1$TransE and  $w_w$TransE, respectively.
+We provide two versions of them, they are RosE$_{1l}$ and  RosE$_{2l}$, respectively.
 ### The first group of datasets.
 For the dataset Kinships:
 ```
