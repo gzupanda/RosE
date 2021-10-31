@@ -1,4 +1,4 @@
-# wTransE: A Weighted Translation-based Model forKnowledge Graph Completion
+# RosE: Towards the Expressiveness of Translation-based Model for Knowledge Graph Completion
 
 This repository contains the code of the main experiments presented in the papers:
 
