@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "QLogicE",
+			"path": "..\\QLogicE"
+		},
+		{
+			"name": "RosE",
+			"path": "."
+		},
+		{
+			"path": "..\\d2l-torch"
+		}
+	],
+	"settings": {
+		"jupyter.jupyterServerType": "local"
+	},
+	"extensions": {
+		"recommendations": [
+			"hbybyyang.gitee-vscode-plugin"
+		]
+	}
+}
