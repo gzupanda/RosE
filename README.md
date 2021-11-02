@@ -6,7 +6,7 @@ This repository contains the code of the main experiments presented in the paper
 
 First clone the repository:
 ```
-git clone https://github.com/gzupanda/wTransE.git
+git clone https://github.com/gzupanda/RosE.git
 ```
 
 The code depends on [downhill](https://github.com/lmjohns3/downhill), a theano-based Stochastic Gradient Descent implementation.
